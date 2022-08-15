@@ -1,10 +1,9 @@
 -- haskellnacci
-haskellnacci n
-  | n == 0 = 0
-  | n <= 2 = 1
-  | otherwise = haskellnacci (n - 1) + haskellnacci (n - 2)
+fib n a b
+  | n == 0 = a
+  | n == 1 = b
+  | otherwise = fib (n - 1) b (a + b)
 
--- fib
-fib 0 = 0
-fib 1 = 1
-fib n = fib (n - 1) + fib (n - 2)
+
+main = do
+  print(fib 12 0 1)

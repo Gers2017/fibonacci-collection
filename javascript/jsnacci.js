@@ -1,10 +1,8 @@
-function jsnacci(n) {
-	if(n <= 0) return 0;
-	else if(n <= 2) return 1;
-	return jsnacci(n - 2) + jsnacci(n - 1);
+function jsnacci(n, t = { a:0, b:1 }) {
+	const {a, b} = t;
+	if(n <= 0) return a;
+	else if(n == 1) return b;
+	return jsnacci(n - 1, { a: b, b: a + b });
 }
 
-function fib(n){
-	return n <= 0 ? 0 : 
-		n <= 2 ? 1 : fib(n - 2) + fib(n - 1);
-}
+console.log(jsnacci(12))
